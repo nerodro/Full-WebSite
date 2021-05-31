@@ -1,0 +1,18 @@
+﻿@model Test_Resiter.Models.User
+<h2>Удаление заявки</h2>
+<dl>
+    <dt>Login</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Email)
+    </dd>
+
+    <dt>Пароль</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Password)
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}

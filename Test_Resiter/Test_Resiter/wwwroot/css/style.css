@@ -1,0 +1,89 @@
+﻿body {
+    background-color: gray;
+}
+
+.block {
+    background-color: white;
+    display: block;
+    padding: 20px;
+    text-align: left;
+    font-style: sans-serif;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.general {
+    background-color: white;
+    display: block; /* Блочный элемент (для старых браузеров) */
+    text-align: center; /* Выравнивание по центру */
+    font-style: sans-serif; /* Курсивное начертание */
+    margin-top: 0; /* Отступ сверху */
+    margin-bottom: 5px; /* Отступ снизу */
+}
+
+ul.menu-item {
+    margin: 0;
+    padding: 4px;
+    background-color: #171717;
+    color: white;
+    font-size: 20pt;
+}
+
+    ul.menu-item li {
+        display: inline; /* Отображать как строчный элемент */
+        margin-right: 80px;
+        padding: 3px;
+    }
+
+a {
+    color: peru;
+    text-decoration: none;
+}
+
+    a:visited {
+        color: peru;
+    }
+
+    a:active {
+        color:green;
+    }
+
+    a:hover {
+        color: grey;
+    }
+
+table {
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #dfdfdf;
+    border-radius: 6px;
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+    table thead tr {
+        color: #ffffff;
+        font-weight: bold;
+        background: #c83240;
+    }
+
+    table tr td {
+        border-right: 1px solid #dfdfdf;
+    }
+
+        table tr td:last-child {
+            border-right: 0px;
+        }
+
+    table tbody tr:nth-child(1n) {
+        background: #f6f6f6;
+    }
+
+    table tbody tr:nth-child(2n) {
+        background: #e6e6e6;
+    }
+
+    table tbody tr:hover {
+        background: #ffe8e8;
+        transition-duration: 0.6s;
+    }

@@ -1,0 +1,39 @@
+﻿@model Test_Resiter.Models.User
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="general">
+        <ul class="menu-item">
+            <li class="menu-item">
+                <a href="">Главная</a>
+            </li>
+            <li class="menu-item">
+                @Html.ActionLink("Войти", "Login", "Account")
+
+            </li>
+        </ul>
+    </div>
+    <div class="block">
+        <h3>Добавить модератора</h3>
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(model => model.Email, "Имя модератора")
+            <br />
+            @Html.EditorFor(model => model.Email)
+            <br /><br />
+            <p>
+                @Html.LabelFor(model => model.Password, "Пароль")
+                <br />
+                @Html.EditorFor(model => model.Password)
+            </p>
+            <input type="submit" value="Отправить">
+        }
+    </div>
+</body>
+</html>

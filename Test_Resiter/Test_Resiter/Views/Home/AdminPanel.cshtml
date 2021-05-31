@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Test_Resiter.Models.User>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div class="general">
+        <ul class="menu-item">
+            <li class="menu-item">
+                @Html.ActionLink("Главная", "Index", "Home")
+            </li>
+            <li class="menu-item">
+                @Html.ActionLink("Заявки", "Admins", "Home")
+            </li>
+            <li class="menu-item">
+                @Html.ActionLink("Управление", "LogAdmin", "Account")
+
+            </li>
+        </ul>
+    </div>
+    <div class="block">
+        Список Модераторов сайта
+        @Html.ActionLink("Добавить модератора", "Moder", "Home")
+        <table>
+
+            <tr>
+                <td>Login</td>
+                <td>Пароль</td>
+            </tr>
+            @foreach (var User in Model)
+            {
+                <tr>
+                    <td>@User.Email</td>
+                    <td>@User.Password</td>
+
+                    <td>
+                        @Html.ActionLink("Редактировать", "EditAdmin", "Admin", new { Id = User.Id })
+                        @Html.ActionLink("Удалить", "DeleteAdmin", "Admin", new { id = User.Id })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

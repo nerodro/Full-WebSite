@@ -1,0 +1,29 @@
+﻿@model Test_Resiter.Models.SendForm
+<h2>Удаление заявки</h2>
+<dl>
+    <dt>Название</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+
+    <dt>Автор</dt>
+    <dd>
+        @Html.DisplayFor(model => model.PhoneNumber)
+    </dd>
+
+    <dt>Цена</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Email)
+    </dd>
+    <dd>
+        @Html.DisplayFor(model => model.Text)
+    </dd>
+    <dd>
+        @Html.DisplayFor(model => model.Comment)
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}

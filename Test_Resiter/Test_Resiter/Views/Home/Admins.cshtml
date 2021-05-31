@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Test_Resiter.Models.SendForm>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div class="general">
+        <ul class="menu-item">
+            <li class="menu-item">
+                @Html.ActionLink("Главная", "Index", "Home")
+            </li>
+            <li class="menu-item">
+                @Html.ActionLink("Заявки", "Admins", "Home")
+            </li>
+            <li class="menu-item">
+                @Html.ActionLink("Управление", "LogAdmin", "Account")
+
+            </li>
+            <li class="menu-item">
+                @Html.ActionLink("Заявки в работе", "InWork", "Home")
+
+            </li>
+        </ul>
+    </div>
+    <div class="block">
+        Список оставленных заявок
+        <table>
+
+            <tr>
+                <td>Имя</td>
+                <td>Номер телефона</td>
+                <td>Email</td>
+                <td>Текст проблемы</td>
+                <td>Комментарий</td>
+            </tr>
+            @foreach (var SendForm in Model)
+            {
+        <tr>
+            <td>@SendForm.Name</td>
+            <td>@SendForm.PhoneNumber</td>
+            <td>@SendForm.Email</td>
+            <td>@SendForm.Text</td>
+            <td>@SendForm.Comment</td>
+
+            <td>
+                @Html.ActionLink("Добавить комментарий", "EditData", new { Id = SendForm.Id })
+                @Html.ActionLink("Закрыть форму", "DeleteForm", new { id = SendForm.Id })
+                @Html.ActionLink("Взять в обработку", "Work", new { id = SendForm.Id })
+            </td>
+        </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

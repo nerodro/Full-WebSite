@@ -1,0 +1,50 @@
+﻿@model Test_Resiter.Models.SendForm
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="general">
+        <ul class="menu-item">
+            <li class="menu-item">
+                <a href="">Главная</a>
+            </li>
+            <li class="menu-item">
+                @Html.ActionLink("Войти", "Login", "Account")
+
+            </li>
+        </ul>
+    </div>
+    <div class="block">
+        Добрый день мы предоставляем услуги по ремонту компьютеров
+        <img src="~/img/pc.jpg" width="600" height="280">
+        <h3>Оставить заявку на ремонт</h3>
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(model => model.Name, "Ваше имя")
+            <br />
+            @Html.EditorFor(model => model.Name)
+            <br /><br />
+            <p>
+                @Html.LabelFor(model => model.Email, "Email")
+                <br />
+                @Html.EditorFor(model => model.Email)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.PhoneNumber, "Номер телефона")
+                <br />
+                @Html.EditorFor(model => model.PhoneNumber)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Text, "Опишите вашу проблему")
+                <br />
+                @Html.EditorFor(model => model.Text)
+            </p>
+            <input type="submit" value="Отправить">
+        }
+    </div>
+</body>
+</html>
