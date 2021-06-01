@@ -17,11 +17,7 @@ namespace Test_Resiter.Controllers
 {
     public class HomeController : Controller
     {
-        ISend repo;
-        public HomeController(ISend r)
-        {
-            repo = r;
-        }
+        
         readonly UserContext db;
 
         public HomeController(UserContext context)
@@ -31,7 +27,7 @@ namespace Test_Resiter.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(repo.sends());
+            return View();
         }
         [HttpPost]
         public ActionResult Index(SendForm form)
