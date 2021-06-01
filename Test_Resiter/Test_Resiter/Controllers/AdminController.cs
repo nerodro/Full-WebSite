@@ -10,11 +10,7 @@ namespace Test_Resiter.Controllers
 {
     public class AdminController : Controller
     {
-        IRepository repo;
-        public AdminController(IRepository r)
-        {
-            repo = r;
-        }
+        
         readonly UserContext db;
 
         public AdminController(UserContext context)
@@ -24,7 +20,7 @@ namespace Test_Resiter.Controllers
         [HttpGet]
         public IActionResult AddModer()
         {
-            return View(repo.AddUser());
+            return View();
         }
         [HttpPost]
         public ActionResult AddModer(Admin user)
@@ -90,7 +86,6 @@ namespace Test_Resiter.Controllers
         {
             db.Entry(form).State = EntityState.Modified;
             db.SaveChanges();
-            repo.EditAdmin();
             return RedirectToAction("AdminPanel","Home");
         }
     }
